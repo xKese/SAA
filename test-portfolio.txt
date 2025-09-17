@@ -1,0 +1,16 @@
+Portfolio Holdings Report
+Date: January 2025
+
+Name | ISIN | Value (EUR)
+Microsoft Corporation | US5949181045 | 75,000
+Apple Inc. | US0378331005 | 65,000  
+NVIDIA Corporation | US67066G1040 | 55,000
+Amazon.com Inc. | US0231351067 | 45,000
+iShares Core MSCI World UCITS ETF | IE00B4L5Y983 | 80,000
+Vanguard FTSE All-World UCITS ETF | IE00B3RBWM25 | 70,000
+Deutsche Bank AG | DE0005140008 | 25,000
+Siemens AG | DE0007236101 | 30,000
+SAP SE | DE0007164600 | 35,000
+Allianz SE | DE0008404005 | 40,000
+
+Total Portfolio Value: 520,000 EUR

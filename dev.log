@@ -1,0 +1,18 @@
+
+> rest-express@1.0.0 dev
+> NODE_ENV=development tsx server/index.ts
+
+🛡️  Rate Limiter Configuration:
+   Development Mode: true
+   Preview Limit: 1000/5min
+   Upload Limit: 100/15min
+   Validation Limit: 200/10min
+   Health Limit: 500/5min
+   General API Limit: 1000/15min
+9:43:12 AM [express] serving on port 5003
+🔍 API Request: GET /portfolios from 127.0.0.1 (Skip: true)
+9:43:19 AM [express] GET /api/portfolios 200 in 558ms :: [{"id":"c1dccf26-35d9-4937-9abc-d293bdf4b95…
+🔍 API Request: GET /portfolios/c1dccf26-35d9-4937-9abc-d293bdf4b95d from 127.0.0.1 (Skip: true)
+9:43:24 AM [express] GET /api/portfolios/c1dccf26-35d9-4937-9abc-d293bdf4b95d 200 in 113ms :: {"id":…
+🔍 API Request: GET /portfolios/c1dccf26-35d9-4937-9abc-d293bdf4b95d from 127.0.0.1 (Skip: true)
+9:43:37 AM [express] GET /api/portfolios/c1dccf26-35d9-4937-9abc-d293bdf4b95d 200 in 168ms :: {"id":…

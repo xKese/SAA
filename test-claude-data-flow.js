@@ -1,0 +1,171 @@
+#!/usr/bin/env node
+
+/**
+ * Test script to verify Claude AI data flow from backend to frontend
+ * Uses test_portfolio.csv as the test data
+ */
+
+const fs = require('fs');
+const path = require('path');
+const FormData = require('form-data');
+
+const API_BASE = 'http://localhost:3000/api';
+const TEST_FILE = path.join(__dirname, 'test_portfolio.csv');
+
+// Color codes for console output
+const colors = {
+  reset: '\x1b[0m',
+  green: '\x1b[32m',
+  red: '\x1b[31m',
+  yellow: '\x1b[33m',
+  blue: '\x1b[34m',
+  magenta: '\x1b[35m'
+};
+
+function log(message, color = 'reset') {
+  console.log(`${colors[color]}${message}${colors.reset}`);
+}
+
+async function uploadPortfolio() {
+  log('\n📤 Uploading test_portfolio.csv...', 'blue');
+  
+  const form = new FormData();
+  form.append('file', fs.createReadStream(TEST_FILE));
+  form.append('name', 'Test Portfolio - Claude Data Flow Verification');
+  
+  try {
+    const fetch = (await import('node-fetch')).default;
+    const response = await fetch(`${API_BASE}/portfolios/upload`, {
+      method: 'POST',
+      body: form,
+      headers: form.getHeaders()
+    });
+    
+    if (!response.ok) {
+      throw new Error(`Upload failed: ${response.statusText}`);
+    }
+    
+    const data = await response.json();
+    log('✅ Portfolio uploaded successfully', 'green');
+    log(`   Portfolio ID: ${data.portfolio.id}`, 'green');
+    return data.portfolio.id;
+  } catch (error) {
+    log(`❌ Upload failed: ${error.message}`, 'red');
+    throw error;
+  }
+}
+
+async function waitForAnalysis(portfolioId, maxWaitTime = 120000) {
+  log('\n⏳ Waiting for Claude AI analysis to complete...', 'yellow');
+  const fetch = (await import('node-fetch')).default;
+  const startTime = Date.now();
+  
+  while (Date.now() - startTime < maxWaitTime) {
+    try {
+      const response = await fetch(`${API_BASE}/portfolios/${portfolioId}`);
+      const portfolio = await response.json();
+      
+      log(`   Status: ${portfolio.analysisStatus}`, 'yellow');
+      
+      if (portfolio.analysisStatus === 'completed') {
+        log('✅ Analysis completed!', 'green');
+        return portfolio;
+      }
+      
+      if (portfolio.analysisStatus === 'failed') {
+        log('❌ Analysis failed!', 'red');
+        throw new Error('Portfolio analysis failed');
+      }
+      
+      await new Promise(resolve => setTimeout(resolve, 3000));
+    } catch (error) {
+      log(`❌ Error checking status: ${error.message}`, 'red');
+      throw error;
+    }
+  }
+  
+  throw new Error('Analysis timeout');
+}
+
+function validateAnalysisResults(portfolio) {
+  log('\n🔍 Validating Claude AI analysis results...', 'magenta');
+  
+  const checks = {
+    'Has analysis results': !!portfolio.analysisResults,
+    'Has asset allocation': !!portfolio.analysisResults?.assetAllocation,
+    'Has geographic allocation': !!portfolio.analysisResults?.geographicAllocation,
+    'Has currency exposure': !!portfolio.analysisResults?.currencyExposure,
+    'Has risk metrics': !!portfolio.analysisResults?.riskMetrics,
+    'Has SAA analysis': !!portfolio.analysisResults?.saaAnalysis,
+    'No placeholder data': !JSON.stringify(portfolio.analysisResults).includes('PLACEHOLDER'),
+    'No example data': !JSON.stringify(portfolio.analysisResults).includes('EXAMPLE'),
+    'Asset allocation not empty': portfolio.analysisResults?.assetAllocation?.length > 0,
+    'Geographic allocation not empty': portfolio.analysisResults?.geographicAllocation?.length > 0
+  };
+  
+  let allPassed = true;
+  
+  for (const [check, passed] of Object.entries(checks)) {
+    if (passed) {
+      log(`   ✅ ${check}`, 'green');
+    } else {
+      log(`   ❌ ${check}`, 'red');
+      allPassed = false;
+    }
+  }
+  
+  // Log SAA analysis details
+  if (portfolio.analysisResults?.saaAnalysis) {
+    log('\n📊 SAA Analysis Details:', 'blue');
+    const saa = portfolio.analysisResults.saaAnalysis;
+    log(`   Has error: ${!!saa.error}`, saa.error ? 'red' : 'green');
+    log(`   Has phases: ${!!(saa.phase1 || saa.phase2 || saa.phase3)}`, 'green');
+    log(`   Has metadata: ${!!saa.metadata}`, 'green');
+    log(`   Has fallback: ${!!saa.fallbackAnalysis}`, saa.fallbackAnalysis ? 'yellow' : 'green');
+    
+    if (saa.fallbackAnalysis?.preservedData) {
+      log('   ⚠️ Partial data was preserved from failed analysis', 'yellow');
+    }
+  }
+  
+  return allPassed;
+}
+
+async function main() {
+  log('🚀 Starting Claude AI Data Flow Verification Test', 'blue');
+  log('=' .repeat(50), 'blue');
+  
+  try {
+    // Step 1: Upload portfolio
+    const portfolioId = await uploadPortfolio();
+    
+    // Step 2: Wait for analysis
+    const portfolio = await waitForAnalysis(portfolioId);
+    
+    // Step 3: Validate results
+    const isValid = validateAnalysisResults(portfolio);
+    
+    log('\n' + '=' .repeat(50), 'blue');
+    if (isValid) {
+      log('✅ SUCCESS: Claude AI data flow verified - No placeholder data detected!', 'green');
+      log('All analysis data is being properly generated by Claude AI and displayed in frontend.', 'green');
+    } else {
+      log('⚠️ WARNING: Some validation checks failed', 'yellow');
+      log('Please review the results above for details.', 'yellow');
+    }
+    
+    // Log portfolio URL for manual verification
+    log(`\n🔗 View portfolio at: http://localhost:3000/#/portfolio/${portfolioId}`, 'blue');
+    
+  } catch (error) {
+    log('\n' + '=' .repeat(50), 'red');
+    log(`❌ TEST FAILED: ${error.message}`, 'red');
+    process.exit(1);
+  }
+}
+
+// Run the test
+main().catch(error => {
+  log(`Fatal error: ${error.message}`, 'red');
+  process.exit(1);
+});

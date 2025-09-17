@@ -1,0 +1,35 @@
+Ticker,Name,Price Chg. % (1D),P/L (1D),Sector,Industry,Region,Account,Purchase Date,Quantity,Average Cost,Last Price,Weight,Market Value,P/L (excl. FX),P/L (from FX),P/L,P/L %,Total Return %
+AENA,Aena S.M.E. S.A.,-0.0024,-19.20,Industrials,Transportation Infrastructure,Europe,***902,Jul-14-2025,320.00,23.44,24.4800,0.0260,7833.60,332.80,0.00,332.80,0.0444,0.0444
+ALV,Allianz SE,-0.0057,-42.00,Financials,Insurance,Europe,***902,Oct-25-2016,20.00,143.87,364.1000,0.0242,7282.00,4404.60,0.00,4404.60,1.5308,1.8814
+ABEA,Alphabet Inc.,0.0253,426.00,Communication Services,Interactive Media and Services,United States and Canada,***902,Jun-07-2016,100.00,32.32,172.5400,0.0573,17254.00,14022.00,0.00,14022.00,4.3385,4.3444
+AMZ,Amazon.com Inc.,-0.0009,-10.80,Consumer Discretionary,Broadline Retail,United States and Canada,***902,Apr-09-2016,60.00,28.34,190.8400,0.0380,11450.40,9750.00,0.00,9750.00,5.7339,5.7339
+APC,Apple Inc.,0.0452,587.88,Information Technology,Technology Hardware Storage and Peripherals,United States and Canada,,,69.00,92.12,196.9400,0.0451,13588.86,7232.78,0.00,7232.78,3.8665,3.9128
+BRYN,Berkshire Hathaway Inc.,-0.0049,-78.00,Financials,Financial Services,United States and Canada,***902,Aug-25-2015,40.00,117.11,398.1000,0.0529,15924.00,11239.60,0.00,11239.60,2.3994,2.3994
+PCE1,Booking Holdings Inc.,-0.0206,-194.00,Consumer Discretionary,Hotels Restaurants and Leisure,United States and Canada,,,2.00,1731.50,4618.0000,0.0307,9236.00,5773.00,0.00,5773.00,1.6938,1.7063
+LLY,Eli Lilly and Company,-0.0209,-92.00,Health Care,Pharmaceuticals,United States and Canada,***863,Dec-04-2024,8.00,793.40,538.2000,0.0143,4305.60,-2041.60,0.00,-2041.60,-0.3217,-0.3179
+EUR,Euro,0.0000,0.00,,,,,,21091.35,0.00,1.0000,0.0700,21091.35,0.00,0.00,0.00,0.0000,0.0000
+RACE,Ferrari N.V.,-0.0065,-55.00,Consumer Discretionary,Automobiles,Europe,,,22.00,289.09,380.5000,0.0278,8371.00,2011.10,0.00,2011.10,0.3162,0.3302
+6WH,Gambling.com Group Limited,-0.0172,-75.00,Communication Services,Media,Europe,***638,Jul-14-2025,500.00,10.00,8.5500,0.0142,4275.00,-725.00,0.00,-725.00,-0.1450,-0.1450
+HNR1,Hannover Rück SE,-0.0257,-175.00,Financials,Insurance,Europe,***638,Aug-13-2024,25.00,232.10,265.8000,0.0221,6645.00,842.50,0.00,842.50,0.1452,0.1765
+LIN,Linde plc,0.0010,8.00,Materials,Chemicals,Europe,,,20.00,379.69,404.0000,0.0268,8080.00,486.20,0.00,486.20,0.0647,0.0832
+M4I,Mastercard Incorporated,0.0123,11.80,Financials,Financial Services,United States and Canada,***350,Oct-17-2023,2.00,381.00,484.5500,0.0032,969.10,207.10,0.00,207.10,0.2718,0.2819
+MDO,McDonald's Corporation,-0.0038,-32.00,Consumer Discretionary,Hotels Restaurants and Leisure,United States and Canada,***902,Aug-30-2023,32.00,259.84,262.2500,0.0279,8392.00,77.12,0.00,77.12,0.0093,0.0550
+MCK,McKesson Corporation,-0.0028,-19.20,Health Care,Health Care Providers and Services,United States and Canada,***902,Apr-25-2025,12.00,610.20,567.8000,0.0226,6813.60,-508.80,0.00,-508.80,-0.0695,-0.0685
+MLB1,MercadoLibre Inc.,-0.0198,-80.00,Consumer Discretionary,Broadline Retail,Latin America and Caribbean,***638,Jun-16-2025,2.00,2081.50,1985.0000,0.0132,3970.00,-193.00,0.00,-193.00,-0.0464,-0.0464
+FB2A,Meta Platforms Inc.,-0.0056,-107.30,Communication Services,Interactive Media and Services,United States and Canada,,,29.00,130.61,656.9000,0.0633,19050.10,15262.36,0.00,15262.36,4.4482,4.4536
+MSF,Microsoft Corporation,0.0058,83.20,Information Technology,Software,United States and Canada,,,32.00,270.15,448.6000,0.0477,14355.20,5710.55,0.00,5710.55,0.6863,0.7034
+MUV2,Münchener Rückversicherungs-Gesellschaft Aktiengesellschaft in München,-0.0614,-740.00,Financials,Insurance,Europe,***902,Nov-22-2018,20.00,191.94,565.6000,0.0376,11312.00,7473.20,0.00,7473.20,1.9468,2.1893
+NVD,NVIDIA Corporation,0.0174,241.20,Information Technology,Semiconductors and Semiconductor Equipment,United States and Canada,***863,Jan-19-2024,90.00,53.22,156.9800,0.0469,14128.20,9338.40,0.00,9338.40,1.9496,1.9501
+NFC,Netflix Inc.,0.0304,306.00,Communication Services,Entertainment,United States and Canada,***638,May-19-2016,10.00,80.18,1038.8000,0.0345,10388.00,9586.20,0.00,9586.20,11.9558,11.9558
+NOV,Novo Nordisk A/S,0.0457,216.96,Health Care,Pharmaceuticals,Europe,,,113.00,80.89,43.9600,0.0165,4967.48,-4173.02,0.00,-4173.02,-0.4439,-0.4307
+4I1,Philip Morris International Inc.,0.0101,69.12,Consumer Staples,Tobacco,United States and Canada,***902,Jul-14-2025,48.00,154.94,144.0600,0.0230,6914.88,-522.24,0.00,-522.24,-0.0702,-0.0702
+RHM,Rheinmetall AG,-0.0125,-41.00,Industrials,Aerospace and Defense,Europe,***638,May-15-2025,2.00,1660.00,1620.5000,0.0108,3241.00,-79.00,0.00,-79.00,-0.0238,-0.0238
+SAP,SAP SE,-0.0093,-68.15,Information Technology,Software,Europe,***638,Nov-20-2024,29.00,222.90,250.3500,0.0241,7260.15,796.05,0.00,796.05,0.1231,0.1321
+931,Sea Limited,-0.0117,-43.50,Communication Services,Entertainment,Asia / Pacific,***638,May-14-2025,29.00,140.00,126.5000,0.0122,3668.50,-391.50,0.00,-391.50,-0.0964,-0.0964
+SIE,Siemens Aktiengesellschaft,0.0247,212.80,Industrials,Industrial Conglomerates,Europe,***902,Dec-02-2024,38.00,186.94,232.6500,0.0294,8840.70,1736.98,0.00,1736.98,0.2445,0.2675
+0AJ,Stride Inc.,-0.0238,-129.00,Consumer Discretionary,Diversified Consumer Services,United States and Canada,***638,Jul-14-2025,43.00,116.00,123.0000,0.0176,5289.00,301.00,0.00,301.00,0.0603,0.0603
+PGV,The Progressive Corporation,-0.0021,-11.25,Financials,Insurance,United States and Canada,***638,Dec-16-2024,25.00,245.00,211.2000,0.0175,5280.00,-845.00,0.00,-845.00,-0.1380,-0.1181
+NUKL,VanEck Uranium ETF,0.0021,15.84,Financials,Capital Markets,United States and Canada,***638,Jul-01-2025,176.00,37.53,42.8800,0.0251,7546.88,941.60,0.00,941.60,0.1426,0.1426
+DG,Vinci SA,0.0069,53.55,Industrials,Construction and Engineering,Europe,***902,Apr-25-2025,63.00,120.40,123.6500,0.0259,7789.95,204.75,0.00,204.75,0.0270,0.0270
+3V64,Visa Inc.,0.0146,145.25,Financials,Financial Services,United States and Canada,***902,Aug-07-2019,35.00,155.91,289.2500,0.0336,10123.75,4666.90,0.00,4666.90,0.8552,0.8961
+EUDF,Wisdomtree Issuer Icav - Wisdomtree Europe Defence Ucits ETF,-0.0149,-82.72,Financials,Capital Markets,Europe,***638,Jun-30-2025,188.00,31.00,29.1250,0.0182,5475.50,-352.50,0.00,-352.50,-0.0605,-0.0605
