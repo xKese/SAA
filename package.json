@@ -18,6 +18,10 @@
     "test:run": "vitest run",
     "test:coverage": "vitest run --coverage",
     "test:watch": "vitest --watch",
+    "test:unit": "vitest run tests/unit",
+    "test:integration": "vitest --config vitest.integration.config.ts",
+    "test:integration:run": "vitest run --config vitest.integration.config.ts",
+    "test:all": "npm run test:unit && npm run test:integration:run",
     "test:e2e": "playwright test",
     "test:e2e:ui": "playwright test --ui"
   },

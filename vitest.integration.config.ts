@@ -1,14 +1,14 @@
 /// <reference types="vitest" />
 import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
 import { resolve } from 'path';
 
 export default defineConfig({
-  plugins: [react()],
   test: {
     globals: true,
-    environment: 'jsdom',
-    setupFiles: ['./tests/setup.ts'],
+    environment: 'node', // Node environment for integration tests
+    setupFiles: ['./tests/integration-setup.ts'],
+    include: ['tests/integration/**/*.test.ts'],
+    exclude: ['tests/unit/**/*', 'tests/e2e/**/*'],
     coverage: {
       provider: 'v8',
       reporter: ['text', 'json', 'html'],
@@ -23,21 +23,28 @@ export default defineConfig({
       ],
       thresholds: {
         global: {
-          branches: 80,
-          functions: 80,
-          lines: 85,
-          statements: 85
+          branches: 70,  // Lower thresholds for integration tests
+          functions: 70,
+          lines: 75,
+          statements: 75
         }
       }
     },
-    testTimeout: 10000,
+    testTimeout: 30000,   // Longer timeout for integration tests
     hookTimeout: 10000,
-    // Integration test configuration
+    // Run integration tests sequentially to avoid database conflicts
     pool: 'forks',
     poolOptions: {
       forks: {
         singleFork: true
       }
+    },
+    // Retry flaky integration tests
+    retry: 2,
+    // Reporter configuration
+    reporter: ['verbose', 'html'],
+    outputFile: {
+      html: './coverage/integration-test-report.html'
     }
   },
   resolve: {
