@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Work+Sans:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(44, 100%, 98%); /* #fffbf1 - ms-cream */
+  --foreground: hsl(192, 100%, 12%); /* #1d3f3d - ms-green */
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(192, 100%, 12%); /* #1d3f3d - ms-green */
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(192, 100%, 12%);
+  --primary: hsl(192, 100%, 12%); /* #1d3f3d - ms-green */
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(208, 59%, 28%); /* #1e4b73 - ms-blue */
+  --secondary-foreground: hsl(0, 0%, 100%);
+  --muted: hsl(44, 33%, 93%); /* #fff3d6 - ms-yellow */
+  --muted-foreground: hsl(192, 100%, 12%);
+  --accent: hsl(44, 33%, 93%); /* #fff3d6 - ms-yellow */
+  --accent-foreground: hsl(192, 100%, 12%);
+  --destructive: hsl(15, 71%, 25%); /* #641e10 - ms-red */
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --border: hsl(210, 15%, 85%);
+  --input: hsl(0, 0%, 100%);
+  --ring: hsl(208, 59%, 28%); /* #1e4b73 - ms-blue */
+  --chart-1: hsl(192, 100%, 12%); /* #1d3f3d - ms-green */
+  --chart-2: hsl(208, 59%, 28%); /* #1e4b73 - ms-blue */
+  --chart-3: hsl(15, 71%, 25%); /* #641e10 - ms-red */
+  --chart-4: hsl(44, 33%, 93%); /* #fff3d6 - ms-yellow */
+  --chart-5: hsl(44, 100%, 98%); /* #fffbf1 - ms-cream */
+  --sidebar: hsl(0, 0%, 100%);
+  --sidebar-foreground: hsl(192, 100%, 12%);
+  --sidebar-primary: hsl(192, 100%, 12%);
+  --sidebar-primary-foreground: hsl(0, 0%, 100%);
+  --sidebar-accent: hsl(44, 33%, 93%);
+  --sidebar-accent-foreground: hsl(192, 100%, 12%);
+  --sidebar-border: hsl(210, 15%, 85%);
+  --sidebar-ring: hsl(208, 59%, 28%);
+  --font-sans: 'Work Sans', sans-serif;
+  --font-serif: 'Playfair Display', serif;
+  --font-mono: 'Fira Code', monospace;
+  --radius: 0.5rem;
+  
+  /* Meeder & Seifer custom colors */
+  --ms-green: hsl(192, 100%, 12%); /* #1d3f3d */
+  --ms-blue: hsl(208, 59%, 28%); /* #1e4b73 */
+  --ms-red: hsl(15, 71%, 25%); /* #641e10 */
+  --ms-cream: hsl(44, 100%, 98%); /* #fffbf1 */
+  --ms-yellow: hsl(44, 33%, 93%); /* #fff3d6 */
+}
+
+/* Custom animations for SAA components */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out;
+}
+
+/* Container queries support for responsive design */
+@container (min-width: 640px) {
+  .@sm\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .@sm\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@container (min-width: 1024px) {
+  .@lg\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .@lg\:grid-cols-6 {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+}
+
+@container (min-width: 1280px) {
+  .@xl\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.dark {
+  --background: hsl(192, 100%, 8%);
+  --foreground: hsl(44, 100%, 98%);
+  --card: hsl(192, 50%, 10%);
+  --card-foreground: hsl(44, 100%, 98%);
+  --popover: hsl(192, 100%, 8%);
+  --popover-foreground: hsl(44, 100%, 98%);
+  --primary: hsl(44, 100%, 98%);
+  --primary-foreground: hsl(192, 100%, 12%);
+  --secondary: hsl(208, 59%, 20%);
+  --secondary-foreground: hsl(0, 0%, 100%);
+  --muted: hsl(192, 50%, 15%);
+  --muted-foreground: hsl(44, 100%, 90%);
+  --accent: hsl(192, 50%, 15%);
+  --accent-foreground: hsl(44, 100%, 98%);
+  --destructive: hsl(15, 71%, 35%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --border: hsl(192, 30%, 20%);
+  --input: hsl(192, 50%, 15%);
+  --ring: hsl(208, 59%, 40%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+@layer utilities {
+  .ms-green {
+    color: var(--ms-green);
+  }
+  
+  .bg-ms-green {
+    background-color: var(--ms-green);
+  }
+  
+  .border-ms-green {
+    border-color: var(--ms-green);
+  }
+  
+  .ms-blue {
+    color: var(--ms-blue);
+  }
+  
+  .bg-ms-blue {
+    background-color: var(--ms-blue);
+  }
+  
+  .border-ms-blue {
+    border-color: var(--ms-blue);
+  }
+  
+  .ms-red {
+    color: var(--ms-red);
+  }
+  
+  .bg-ms-red {
+    background-color: var(--ms-red);
+  }
+  
+  .border-ms-red {
+    border-color: var(--ms-red);
+  }
+  
+  .ms-cream {
+    color: var(--ms-cream);
+  }
+  
+  .bg-ms-cream {
+    background-color: var(--ms-cream);
+  }
+  
+  .border-ms-cream {
+    border-color: var(--ms-cream);
+  }
+  
+  .ms-yellow {
+    color: var(--ms-yellow);
+  }
+  
+  .bg-ms-yellow {
+    background-color: var(--ms-yellow);
+  }
+  
+  .border-ms-yellow {
+    border-color: var(--ms-yellow);
+  }
+  
+  /* Custom animations for progress indicators */
+  @keyframes shimmer {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+  
+  .animate-shimmer {
+    animation: shimmer 2s infinite;
+  }
+  
+  @keyframes celebration {
+    0%, 100% {
+      transform: scale(1);
+    }
+    25% {
+      transform: scale(1.1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    75% {
+      transform: scale(1.1);
+    }
+  }
+  
+  .animate-celebration {
+    animation: celebration 0.6s ease-in-out;
+  }
+}
