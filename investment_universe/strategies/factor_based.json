@@ -1,0 +1,28 @@
+{
+  "strategy_name": "Factor-Based Investing",
+  "description": "Systematic exposure to risk factors",
+  "factors": {
+    "value": {
+      "weight": 0.2,
+      "metrics": ["P/E", "P/B", "EV/EBITDA"]
+    },
+    "momentum": {
+      "weight": 0.2,
+      "lookback_periods": ["3M", "6M", "12M"]
+    },
+    "quality": {
+      "weight": 0.2,
+      "metrics": ["ROE", "Debt/Equity", "Earnings_Stability"]
+    },
+    "low_volatility": {
+      "weight": 0.2,
+      "measure": "realized_volatility_12M"
+    },
+    "size": {
+      "weight": 0.2,
+      "focus": "small_cap_premium"
+    }
+  },
+  "rebalancing_frequency": "quarterly",
+  "risk_profile": "moderate_aggressive"
+}

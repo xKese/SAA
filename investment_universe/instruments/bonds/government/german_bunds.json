@@ -1,0 +1,25 @@
+{
+  "isin": "IE00B1FZS798",
+  "name": "iShares Core Euro Government Bond UCITS ETF",
+  "assetClass": "Bond",
+  "subAssetClass": "Government",
+  "metrics": {
+    "ter": 0.0009,
+    "aum": 12000000000,
+    "liquidityScore": 9,
+    "qualityScore": 10,
+    "tracking_error": 0.0008,
+    "yield": 0.0185
+  },
+  "constraints": {
+    "minInvestment": 1000,
+    "maxAllocation": 0.30,
+    "currency": "EUR",
+    "replicationMethod": "physical"
+  },
+  "factsheet": {
+    "localPath": "",
+    "lastUpdate": "2025-01-01",
+    "provider": "iShares"
+  }
+}

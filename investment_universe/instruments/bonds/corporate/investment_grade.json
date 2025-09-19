@@ -1,0 +1,25 @@
+{
+  "isin": "IE00B3DKXQ41",
+  "name": "iShares Core Euro Corporate Bond UCITS ETF",
+  "assetClass": "Bond",
+  "subAssetClass": "Investment Grade Corporate",
+  "metrics": {
+    "ter": 0.0012,
+    "aum": 7500000000,
+    "liquidityScore": 8,
+    "qualityScore": 8,
+    "tracking_error": 0.0015,
+    "yield": 0.0295
+  },
+  "constraints": {
+    "minInvestment": 1000,
+    "maxAllocation": 0.20,
+    "currency": "EUR",
+    "replicationMethod": "physical"
+  },
+  "factsheet": {
+    "localPath": "",
+    "lastUpdate": "2025-01-01",
+    "provider": "iShares"
+  }
+}

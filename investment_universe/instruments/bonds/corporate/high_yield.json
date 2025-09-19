@@ -1,0 +1,25 @@
+{
+  "isin": "IE00B66F4759",
+  "name": "iShares Euro High Yield Corporate Bond UCITS ETF",
+  "assetClass": "Bond",
+  "subAssetClass": "High Yield Corporate",
+  "metrics": {
+    "ter": 0.0050,
+    "aum": 2500000000,
+    "liquidityScore": 7,
+    "qualityScore": 6,
+    "tracking_error": 0.0035,
+    "yield": 0.0520
+  },
+  "constraints": {
+    "minInvestment": 1000,
+    "maxAllocation": 0.10,
+    "currency": "EUR",
+    "replicationMethod": "physical"
+  },
+  "factsheet": {
+    "localPath": "",
+    "lastUpdate": "2025-01-01",
+    "provider": "iShares"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "strategy_name": "Risk Parity",
+  "description": "Equal risk contribution across asset classes",
+  "risk_budgets": {
+    "equities": 0.25,
+    "government_bonds": 0.25,
+    "corporate_bonds": 0.25,
+    "alternatives": 0.25
+  },
+  "leverage": {
+    "allowed": true,
+    "max_leverage": 1.5
+  },
+  "volatility_target": 0.1,
+  "rebalancing_frequency": "monthly",
+  "risk_profile": "balanced"
+}

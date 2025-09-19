@@ -1,0 +1,20 @@
+{
+  "strategy_name": "Core-Satellite",
+  "description": "Core holdings for stability with satellite positions for alpha generation",
+  "allocation": {
+    "core": {
+      "target": 0.7,
+      "min": 0.6,
+      "max": 0.8,
+      "instruments": ["broad_market_etfs", "investment_grade_bonds"]
+    },
+    "satellite": {
+      "target": 0.3,
+      "min": 0.2,
+      "max": 0.4,
+      "instruments": ["sector_etfs", "emerging_markets", "alternatives"]
+    }
+  },
+  "rebalancing_frequency": "quarterly",
+  "risk_profile": "moderate"
+}

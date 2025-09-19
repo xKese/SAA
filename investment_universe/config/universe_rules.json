@@ -1,0 +1,27 @@
+{
+  "universe_definition": {
+    "name": "Meeder & Seifer Investment Universe",
+    "version": "1.0",
+    "last_updated": "2025-01-01"
+  },
+  "inclusion_criteria": {
+    "minimum_liquidity": {
+      "daily_volume_usd": 1000000,
+      "bid_ask_spread_max": 0.005
+    },
+    "minimum_size": {
+      "market_cap_usd": 100000000,
+      "aum_funds": 50000000
+    },
+    "regulatory": {
+      "ucits_compliant": true,
+      "approved_exchanges": ["XETRA", "NYSE", "NASDAQ", "LSE"]
+    }
+  },
+  "exclusion_criteria": {
+    "sectors": [],
+    "countries_sanctioned": true,
+    "esg_minimum_score": "BBB"
+  },
+  "review_frequency": "quarterly"
+}

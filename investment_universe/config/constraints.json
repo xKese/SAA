@@ -1,0 +1,38 @@
+{
+  "portfolio_constraints": {
+    "concentration_limits": {
+      "single_position_max": 0.1,
+      "single_issuer_max": 0.15,
+      "single_country_max": 0.4,
+      "single_sector_max": 0.3
+    },
+    "asset_class_limits": {
+      "equities": {
+        "min": 0.2,
+        "max": 0.8
+      },
+      "fixed_income": {
+        "min": 0.1,
+        "max": 0.6
+      },
+      "alternatives": {
+        "min": 0,
+        "max": 0.2
+      },
+      "cash": {
+        "min": 0.02,
+        "max": 0.1
+      }
+    },
+    "risk_limits": {
+      "max_portfolio_volatility": 0.15,
+      "max_tracking_error": 0.05,
+      "max_drawdown": 0.2,
+      "var_95_limit": 0.1
+    }
+  },
+  "regulatory_constraints": {
+    "ucits_5_10_40": true,
+    "derivative_exposure_max": 1.0
+  }
+}

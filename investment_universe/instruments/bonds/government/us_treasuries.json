@@ -1,0 +1,25 @@
+{
+  "isin": "IE00B3F81R35",
+  "name": "iShares Core US Treasury Bond UCITS ETF",
+  "assetClass": "Bond",
+  "subAssetClass": "Government",
+  "metrics": {
+    "ter": 0.0007,
+    "aum": 5000000000,
+    "liquidityScore": 8,
+    "qualityScore": 10,
+    "tracking_error": 0.0006,
+    "yield": 0.0345
+  },
+  "constraints": {
+    "minInvestment": 1000,
+    "maxAllocation": 0.25,
+    "currency": "USD",
+    "replicationMethod": "physical"
+  },
+  "factsheet": {
+    "localPath": "",
+    "lastUpdate": "2025-01-01",
+    "provider": "iShares"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "selection_process": {
+    "stages": [
+      {
+        "stage": 1,
+        "name": "Universe Screening",
+        "criteria": ["liquidity", "size", "regulatory_compliance"]
+      },
+      {
+        "stage": 2,
+        "name": "Fundamental Analysis",
+        "criteria": ["financial_metrics", "business_quality", "management_quality"]
+      },
+      {
+        "stage": 3,
+        "name": "Risk Assessment",
+        "criteria": ["volatility", "correlation", "tail_risk"]
+      },
+      {
+        "stage": 4,
+        "name": "Portfolio Fit",
+        "criteria": ["diversification_benefit", "risk_contribution", "expected_return"]
+      }
+    ]
+  },
+  "scoring_methodology": {
+    "quantitative_weight": 0.6,
+    "qualitative_weight": 0.4,
+    "minimum_score": 60,
+    "scale": 100
+  },
+  "review_triggers": {
+    "rating_downgrade": true,
+    "volatility_spike": {
+      "threshold": 2,
+      "measure": "standard_deviations"
+    },
+    "performance": {
+      "underperformance_threshold": -0.15,
+      "period": "12M"
+    }
+  }
+}
